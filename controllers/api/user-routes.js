@@ -65,6 +65,7 @@ router.post('/', (req, res) => {
         password: req.body.password
     })
         .then(dbUserData => {
+            console.log(dbUserData);
             // initiate the creation  of the session and then run the callback function once complete
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
